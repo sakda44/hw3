@@ -32,57 +32,69 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
-      /* Always set the map height explicitly to define the size of the div
+        /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+        #map {
+            height: 100%;
+        }
 
-      #map {
-        height: 500px;
-        width: 500px;
-      }
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-      .bg {
+        #map {
+            height: 500px;
+            width: 418px;
+        }
+
+        .bg {
             background-color: rgb(197, 190, 179);
         }
 
+        .bgin {
+            background-color: rgb(214, 189, 153);
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
     </style>
 </head>
 
 <body class="bg">
-    
+
     <div class="container mt-5 col-4">
-        <div class="container mx-auto">
-            <p class="text-center h1">Weather in other areas</p>
-            <br />
-            <div class="from-group mb-3 ">
-                <span class="from-group-text">Latitude :</span>
-                <input type="text" class="form-control" aria-label="Latitude"
-                    aria-describedby="Latitude" id="Latitude">
-            </div>
-            <div class="from-group mb-3">
-                <span class="from-group-text">Longitude :</span>
-                <input type="text" class="form-control" aria-label="Longitude"
-                    aria-describedby="Longitude" id="Longitude">
-            </div>
-            <div class="container-fluid mt-5  d-flex justify-content-center">
-                <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
-            </div>
-        </div>
-        </br>
-        <div id="map"></div>
-        <br />
-        <div class="container mt-5 d-flex justify-content-center">
-            <div class="card" id="cardWeather" style="width: 30rem; ">
+        <div class="bgin">
+            <div class="container mx-auto">
+                <p class="text-center h1">Weather in other areas</p>
+                <br />
+                <div class="from-group mb-3 ">
+                    <span class="from-group-text">Latitude :</span>
+                    <input type="text" class="form-control" aria-label="Latitude" aria-describedby="Latitude"
+                        id="Latitude">
+                </div>
+                <div class="from-group mb-3">
+                    <span class="from-group-text">Longitude :</span>
+                    <input type="text" class="form-control" aria-label="Longitude" aria-describedby="Longitude"
+                        id="Longitude">
+                </div>
+                <div class="container-fluid mt-5  d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+                </div>
+                </br>
+                <div id="map"></div>
             </div>
 
+            <br />
+            <div class="container mt-5 d-flex justify-content-center">
+                <div class="card" id="cardWeather" style="width: 30rem; ">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -176,15 +188,15 @@
     });
 
     var map;
-      function initMap() {
+    function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 7.568287, lng: 99.62807152},
-          zoom: 11
+            center: { lat: 7.568287, lng: 99.62807152 },
+            zoom: 11
         });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK3RgqSLy1toc4lkh2JVFQ5ipuRB106vU&callback=initMap"
-    async defer></script>
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK3RgqSLy1toc4lkh2JVFQ5ipuRB106vU&callback=initMap" async
+    defer></script>
 </script>
 
 </html>
